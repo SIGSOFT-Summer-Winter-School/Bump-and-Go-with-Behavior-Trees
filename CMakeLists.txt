@@ -48,13 +48,13 @@ foreach(bt_plugin ${plugin_libs})
   target_compile_definitions(${bt_plugin} PRIVATE BT_PLUGIN_EXPORT)
 endforeach()
 
-add_executable(bt_bumpgo src/bt_bumpgo_main.cpp)
-ament_target_dependencies(bt_bumpgo ${dependencies})
-target_link_libraries(bt_bumpgo ${ZMQ_LIBRARIES})
+add_executable(bt_bumpgo_main src/bt_bumpgo_main.cpp)
+ament_target_dependencies(bt_bumpgo_main ${dependencies})
+target_link_libraries(bt_bumpgo_main ${ZMQ_LIBRARIES})
 
 install(TARGETS
   ${plugin_libs}
-  bt_bumpgo
+  bt_bumpgo_main
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION lib/${PROJECT_NAME}

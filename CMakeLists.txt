@@ -64,7 +64,7 @@ install(DIRECTORY include/
   DESTINATION include/
 )
 
-install(DIRECTORY behavior_tree_xml
+install(DIRECTORY behavior_tree_xml launch
   DESTINATION share/${PROJECT_NAME}
 )
 

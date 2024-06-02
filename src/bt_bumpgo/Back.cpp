@@ -34,7 +34,7 @@ Back::Back(
 {
   config().blackboard->get("node", node_);
 
-  vel_pub_ = node_->create_publisher<geometry_msgs::msg::Twist>("/output_vel", 100);
+  // Complete here: Initialize vel_pub_ to  /output_vel
 }
 
 void
@@ -50,16 +50,11 @@ Back::tick()
   }
 
   geometry_msgs::msg::Twist vel_msgs;
-  vel_msgs.linear.x = -0.3;
-  vel_pub_->publish(vel_msgs);
+  // Complete here: Fill and publish velocities
 
-  auto elapsed = node_->now() - start_time_;
+  // Complete here: Return SUCCESS after moving back three seconds.
 
-  if (elapsed < 3s) {
-    return BT::NodeStatus::RUNNING;
-  } else {
-    return BT::NodeStatus::SUCCESS;
-  }
+  return BT::NodeStatus::RUNNING;
 }
 
 }  // namespace bt_bumpgo

@@ -35,16 +35,13 @@ IsObstacle::IsObstacle(
 {
   config().blackboard->get("node", node_);
 
-  laser_sub_ = node_->create_subscription<sensor_msgs::msg::LaserScan>(
-    "/input_scan", 100, std::bind(&IsObstacle::laser_callback, this, _1));
-
-  last_reading_time_ = node_->now();
+  // Complete here: Initialize laser_sub_ subscribing to /input_scan
 }
 
 void
 IsObstacle::laser_callback(sensor_msgs::msg::LaserScan::UniquePtr msg)
 {
-  last_scan_ = std::move(msg);
+  // Complete here: Store last_scan_
 }
 
 BT::NodeStatus
@@ -57,11 +54,9 @@ IsObstacle::tick()
   double distance = 1.0;
   getInput("distance", distance);
 
-  if (last_scan_->ranges[last_scan_->ranges.size() / 2] < distance) {
-    return BT::NodeStatus::SUCCESS;
-  } else {
-    return BT::NodeStatus::FAILURE;
-  }
+  // Complete here: Return SUCCESS if there is an obstacle
+
+  return BT::NodeStatus::FAILURE;
 }
 
 }  // namespace bt_bumpgo

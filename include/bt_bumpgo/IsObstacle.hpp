@@ -47,7 +47,6 @@ public:
 
 private:
   rclcpp::Node::SharedPtr node_;
-  rclcpp::Time last_reading_time_;
   rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr laser_sub_;
   sensor_msgs::msg::LaserScan::UniquePtr last_scan_;
 };

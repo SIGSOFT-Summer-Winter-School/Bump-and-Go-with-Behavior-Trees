@@ -34,15 +34,13 @@ Forward::Forward(
 {
   config().blackboard->get("node", node_);
 
-  vel_pub_ = node_->create_publisher<geometry_msgs::msg::Twist>("/output_vel", 100);
+  // Complete here: Initialize vel_pub_ to  /output_vel
 }
 
 BT::NodeStatus
 Forward::tick()
 {
-  geometry_msgs::msg::Twist vel_msgs;
-  vel_msgs.linear.x = 0.3;
-  vel_pub_->publish(vel_msgs);
+  // Complete here: Fill and publish velocities
 
   return BT::NodeStatus::RUNNING;
 }

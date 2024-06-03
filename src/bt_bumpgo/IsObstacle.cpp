@@ -47,12 +47,13 @@ IsObstacle::laser_callback(sensor_msgs::msg::LaserScan::UniquePtr msg)
 BT::NodeStatus
 IsObstacle::tick()
 {
-  if (last_scan_ == nullptr) {
+  if(last_scan_==nullptr)
+  {
     return BT::NodeStatus::FAILURE;
   }
 
-  double distance = 1.0;
-  getInput("distance", distance);
+  double distance =1.0;
+  getInput("distance",distance);
 
   // Complete here: Return SUCCESS if there is an obstacle
 

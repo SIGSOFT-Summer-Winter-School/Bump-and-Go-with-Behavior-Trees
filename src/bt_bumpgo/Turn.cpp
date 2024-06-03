@@ -30,9 +30,9 @@ using namespace std::chrono_literals;
 Turn::Turn(
   const std::string & xml_tag_name,
   const BT::NodeConfiguration & conf)
-: BT::ActionNodeBase(xml_tag_name, conf)
+:BT::ActionNodeBase(xml_tag_name, conf)
 {
-  config().blackboard->get("node", node_);
+  config().blackboard->get("node",node_);
 
   // Complete here: Initialize vel_pub_ to  /output_vel
 }
@@ -45,8 +45,8 @@ Turn::halt()
 BT::NodeStatus
 Turn::tick()
 {
-  if (status() == BT::NodeStatus::IDLE) {
-    start_time_ = node_->now();
+  if (status()==BT::NodeStatus::IDLE) {
+    start_time_=node_->now();
   }
 
   geometry_msgs::msg::Twist vel_msgs;

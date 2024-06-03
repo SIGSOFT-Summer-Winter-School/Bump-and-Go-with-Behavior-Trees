@@ -32,7 +32,7 @@ Back::Back(
   const BT::NodeConfiguration & conf)
 : BT::ActionNodeBase(xml_tag_name, conf)
 {
-  config().blackboard->get("node", node_);
+  config().blackboard->get("node",node_);
 
   // Complete here: Initialize vel_pub_ to  /output_vel
 }
@@ -45,8 +45,9 @@ Back::halt()
 BT::NodeStatus
 Back::tick()
 {
-  if (status() == BT::NodeStatus::IDLE) {
-    start_time_ = node_->now();
+  if (status() == BT::NodeStatus::IDLE)
+  {
+    start_time_=node_->now();
   }
 
   geometry_msgs::msg::Twist vel_msgs;

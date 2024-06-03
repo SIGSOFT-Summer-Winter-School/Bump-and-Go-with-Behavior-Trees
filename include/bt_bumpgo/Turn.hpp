@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef BT_BUMPGO__TURN_HPP_
-#define BT_BUMPGO__TURN_HPP_
+#ifndef TURN_HPP_
+#define TURN_HPP_
 
 #include <string>
 
@@ -47,6 +47,6 @@ private:
   rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr vel_pub_;
 };
 
-}  // namespace bt_bumpgo
+}
 
-#endif  // BT_BUMPGO__TURN_HPP_
+#endif  // TURN_HPP_

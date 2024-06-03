@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef BT_BUMPGO__FORWARD_HPP_
-#define BT_BUMPGO__FORWARD_HPP_
+#ifndef FORWARD_HPP_
+#define FORWARD_HPP_
 
 #include <string>
 
@@ -26,12 +26,10 @@
 namespace bt_bumpgo
 {
 
-class Forward : public BT::ActionNodeBase
+class Forward :public BT::ActionNodeBase
 {
 public:
-  explicit Forward(
-    const std::string & xml_tag_name,
-    const BT::NodeConfiguration & conf);
+  explicit Forward(const std::string & xml_tag_name,const BT::NodeConfiguration & conf);
 
   void halt() {}
   BT::NodeStatus tick();
@@ -48,4 +46,4 @@ private:
 
 }  // namespace bt_bumpgo
 
-#endif  // BT_BUMPGO__FORWARD_HPP_
+#endif  // FORWARD_HPP_

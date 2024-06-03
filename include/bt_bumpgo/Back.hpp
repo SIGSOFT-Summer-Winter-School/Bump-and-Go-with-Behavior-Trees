@@ -12,8 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#ifndef BT_BUMPGO__BACK_HPP_
-#define BT_BUMPGO__BACK_HPP_
+#ifndef BACK_
+#define BACK_
 
 #include <string>
 
@@ -29,9 +29,7 @@ namespace bt_bumpgo
 class Back : public BT::ActionNodeBase
 {
 public:
-  explicit Back(
-    const std::string & xml_tag_name,
-    const BT::NodeConfiguration & conf);
+  explicit Back(const std::string & xml_tag_name,const BT::NodeConfiguration & conf);
 
   void halt();
   BT::NodeStatus tick();
@@ -47,6 +45,6 @@ private:
   rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr vel_pub_;
 };
 
-}  // namespace bt_bumpgo
+}
 
-#endif  // BT_BUMPGO__BACK_HPP_
+#endif  // BACK_
